@@ -33,7 +33,7 @@
 
             <!-- Page Content -->
             <main class="p-6 bg-white shadow-md rounded-md max-w-7xl mx-auto mt-6">
-                @yield('content')
+                {{ $slot }}
             </main>
         </div>
     </body>

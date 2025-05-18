@@ -1,8 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <h1>Daftar Produk</h1>
+<x-app-layout>
+    <div class="container">
+    <h1 class="text-2xl font-semibold mb-4">Daftar Produk</h1>
 
     <!-- Tombol untuk menambahkan produk baru -->
     <a href="{{ route('products.create') }}" class="btn btn-success mb-3">Tambah Produk Baru</a>
@@ -48,4 +46,4 @@
     <!-- Menampilkan pagination -->
     {{ $products->links() }}
 </div>
-@endsection
+</x-app-layout>

@@ -1,7 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
+<x-app-layout>
+    <div class="container">
     <h1>Edit Produk</h1>
 
     <!-- Menampilkan error validasi jika ada -->
@@ -49,4 +47,4 @@
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
-@endsection
+</x-app-layout>

@@ -24,16 +24,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\CategoryController;
 
 // Definisikan resource route untuk produk
 Route::resource('products', ProductController::class);
-
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\TransactionController;
-
 // Definisikan resource route untuk pelanggan
 Route::resource('customers', CustomerController::class);
-
 // Definisikan resource route untuk transaksi
 Route::resource('transactions', TransactionController::class);
-
+// Definisikan resource route untuk kategori
+Route::resource('categories', CategoryController::class);

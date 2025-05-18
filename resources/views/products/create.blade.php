@@ -1,10 +1,7 @@
-@extends('layouts.app')
+<x-app-layout>
+    <div class="container">
+    <h1 class="text-2xl font-semibold mb-4">Tambah Produk Baru</h1>
 
-@section('content')
-<div class="container">
-    <h1>Tambah Produk Baru</h1>
-
-    <!-- Menampilkan error validasi jika ada -->
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -15,7 +12,6 @@
         </div>
     @endif
 
-    <!-- Form untuk menambahkan produk baru -->
     <form method="POST" action="{{ route('products.store') }}">
         @csrf
         <div class="mb-3">
@@ -48,4 +44,4 @@
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>
-@endsection
+</x-app-layout>
