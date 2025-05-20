@@ -41,9 +41,15 @@
             </div>
 
             <div class="mb-4">
-                <label for="total_price" class="form-label">Total Harga</label>
+                <label for="quantity" class="form-label">Kuantitas</label>
+                <input type="number" name="quantity" id="quantity" value="{{ old('quantity', 1) }}" 
+                        class="form-control" min="1" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="total_price" class="form-label">Total Harga (Rp)</label>
                 <input type="number" name="total_price" id="total_price" value="{{ old('total_price') }}" 
-                        class="form-control" required>
+                        class="form-control" readonly required>
             </div>
 
             <div class="mb-4">
@@ -61,8 +67,18 @@
     document.getElementById('product_id').addEventListener('change', function() {
         const selectedOption = this.options[this.selectedIndex];
         const price = selectedOption.getAttribute('data-price');
-        if (price) {
-            document.getElementById('total_price').value = price;
+        const quantity = document.getElementById('quantity').value;
+        if (price && quantity) {
+            document.getElementById('total_price').value = price * quantity;
+        }
+    });
+
+    document.getElementById('quantity').addEventListener('change', function() {
+        const product = document.getElementById('product_id');
+        const price = product.options[product.selectedIndex].getAttribute('data-price');
+        const quantity = this.value;
+        if (price && quantity) {
+            document.getElementById('total_price').value = price * quantity;
         }
     });
 </script>

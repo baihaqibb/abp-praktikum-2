@@ -28,7 +28,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Harga Produk</label>
+            <label for="price" class="form-label">Harga Produk (Rp)</label>
             <input type="number" class="form-control" id="price" name="price" value="{{ $product->price }}" step="0.01" required>
         </div>
 

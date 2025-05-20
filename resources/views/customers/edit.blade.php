@@ -12,8 +12,9 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('customers.store') }}">
+        <form method="POST" action="{{ route('customers.update', $customer->id) }}">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $customer->name) }}" required>

@@ -27,7 +27,7 @@
                 <tr>
                     <td>{{ $transaction->customer->name }}</td>
                     <td>{{ $transaction->product->name }}</td>
-                    <td>Rp {{ number_format($transaction->total_price, 0, ',', '.') }}</td>
+                    <td>Rp{{ number_format($transaction->total_price, 2, ',', '.') }}</td>
                     <td>
                         @if($transaction->transaction_date instanceof \Carbon\Carbon)
                             {{ $transaction->transaction_date->format('Y-m-d') }}

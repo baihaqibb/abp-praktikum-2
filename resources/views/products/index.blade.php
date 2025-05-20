@@ -28,7 +28,7 @@
             <tr>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->description }}</td>
-                <td>{{ $product->price }}</td>
+                <td>Rp{{ number_format($product->price, 2, ',', '.') }}</td>
                 <td>{{ $product->category->name }}</td>
                 <td>
                     <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
